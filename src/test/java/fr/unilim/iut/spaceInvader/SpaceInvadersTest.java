@@ -150,6 +150,21 @@ import org.junit.Test;
 			"...............\n" + 
 			"V..............\n" , spaceinvaders.toString());
 		}
+	    @Test
+		public void test_unNouveauVaisseauAvecDimensionEstCorrectementPositionneDansEspaceJeu() {
+			spaceinvaders.positionnerUnNouveauVaisseau(3,2,7,9);
+			assertEquals("" + 
+			"...............\n" + 
+			"...............\n" +
+			"...............\n" + 
+			"...............\n" + 
+			"...............\n" + 
+			"...............\n" + 
+			"...............\n" + 
+			"...............\n" + 
+			".......VVV.....\n" + 
+			".......VVV.....\n" , spaceinvaders.toString());
+		}
 }
     
     
