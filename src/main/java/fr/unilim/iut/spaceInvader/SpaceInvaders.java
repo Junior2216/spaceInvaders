@@ -37,8 +37,31 @@ package fr.unilim.iut.spaceInvader;
 	        return marque;
 		}
 	    
+	    private boolean estDansEspaceJeu(int x, int y){
+	    	return (((x >= 0) && (x < longueur)) && ((y >= 0) && (y < hauteur)));
+	    }
+	    
 	    public void positionnerUnNouveauVaisseau(int x, int y) {
+	    	if (  !estDansEspaceJeu(x, y) )
+				throw new HorsEspaceJeuException("La position du vaisseau est en dehors de l'espace jeu");
+	    	
 	        this.vaisseau = new Vaisseau(x, y);
-
+		}
+	    public void deplacerVaisseauVersLaDroite() {
+	    	if (vaisseau.getX()< (longueur-1))
+			   vaisseau.seDeplacerVersLaDroite();
+		}
+	    public void deplacerVaisseauVersLaGauche() {
+	    	if (vaisseau.getX()>(0))
+			   vaisseau.seDeplacerVersLaGauche();
 		}
    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
